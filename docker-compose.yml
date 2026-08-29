@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: hr_db
+      POSTGRES_USER: hr_user
+      POSTGRES_PASSWORD: hr_pass
+    ports:
+      - "5433:5432"
+    volumes:
+      - hr_pgdata:/var/lib/postgresql/data
+volumes:
+  hr_pgdata:
